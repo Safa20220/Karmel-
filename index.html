@@ -2,17 +2,30 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#7c3aed" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Karmel+" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
   <title>Karmel+</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image" href="images/circle_dark_icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header class="main-header">
     <div class="header-container">
+      <!-- زر القائمة المتحركة -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
 
       <nav class="header-nav">
         <ul class="nav-list" id="navList">
@@ -37,10 +50,10 @@
             <img src="images/i14.png" alt="Karmel Illustration" class="hero-side-img">
           </div>
           <div class="hero-simple-col-left">
-            <h1 class="hero-main-title fade-in-up" style="font-family:'Almarai',sans-serif;font-size:1.5rem;font-weight:800;color:#7c3aed;margin-bottom:0.8rem;line-height:1.5;animation:fadeInPhrase 1s both;">ودّع الإجراءات اليدوية وابدأ التحول الرقمي مع كرمل+</h1>
-            <p class="hero-main-desc fade-in-up" style="font-family:'Almarai',sans-serif;font-size:1.05rem;color:#444;font-weight:500;margin-bottom:0.7rem;line-height:2;animation:fadeInPhrase 1.3s both;">نقدّم حلولاً ذكية تسرّع إدارة أعمالك وتزيد من دقتها وكفاءتها.</p>
-            <p class="hero-main-desc fade-in-up" style="font-family:'Almarai',sans-serif;font-size:1rem;color:#7c3aed;font-weight:700;margin-bottom:1.1rem;line-height:2;animation:fadeInPhrase 1.6s both;">اختر كرمل+ لتجربة احترافية تسهّل عليك كل خطوة نحو المستقبل.</p>
-            <a href="#contact" class="hero-main-btn fade-in-up" style="font-family:'Almarai',sans-serif;animation:fadeInPhrase 2s both;">تواصل معنا</a>
+            <h1 class="hero-main-title fade-in-up" style="font-family:'Tajawal',sans-serif;font-size:1.5rem;font-weight:800;color:#7c3aed;margin-bottom:0.8rem;line-height:1.5;animation:fadeInPhrase 1s both;">ودّع الإجراءات اليدوية وابدأ التحول الرقمي مع كرمل+</h1>
+            <p class="hero-main-desc fade-in-up" style="font-family:'Tajawal',sans-serif;font-size:1.05rem;color:#444;font-weight:500;margin-bottom:0.7rem;line-height:2;animation:fadeInPhrase 1.3s both;">نقدّم حلولاً ذكية تسرّع إدارة أعمالك وتزيد من دقتها وكفاءتها.</p>
+            <p class="hero-main-desc fade-in-up" style="font-family:'Tajawal',sans-serif;font-size:1rem;color:#7c3aed;font-weight:700;margin-bottom:1.1rem;line-height:2;animation:fadeInPhrase 1.6s both;">اختر كرمل+ لتجربة احترافية تسهّل عليك كل خطوة نحو المستقبل.</p>
+            <a href="#contact" class="hero-main-btn fade-in-up" style="font-family:'Tajawal',sans-serif;animation:fadeInPhrase 2s both;">تواصل معنا</a>
           </div>
         </div>
 
@@ -57,7 +70,7 @@
         <div class="about-modern-img-col">
           </div>
         <div class="about-modern-content-col">
-          <h2 class="about-section-title" style="font-size:2.2rem;font-weight:900;color:#7c3aed;font-family:'Almarai',sans-serif;margin-bottom:1.5rem;letter-spacing:0.5px;">من نحن</h2>
+          <h2 class="about-section-title" style="font-size:2.2rem;font-weight:900;color:#7c3aed;font-family:'Tajawal',sans-serif;margin-bottom:1.5rem;letter-spacing:0.5px;">من نحن</h2>
           <div class="about-modern-desc fade-in-section" style="max-width: 700px; margin: 90px auto 0 auto; text-align: center; padding: 0 12px; position:relative;">
             <!-- زخرفة يمين -->
             <svg class="side-decor-svg right" width="80" height="300" viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;right:-90px;z-index:1;pointer-events:none;">
@@ -67,14 +80,14 @@
             <svg class="side-decor-svg left" width="80" height="300" viewBox="0 0 80 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:-90px;z-index:1;pointer-events:none;">
               <path d="M70 10 Q10 60 70 110 Q10 160 70 210 Q10 260 70 290" stroke="#7C3AED" stroke-width="3" fill="none" opacity="0.13"/>
             </svg>
-            <p style="font-size:1.08rem; color:#666; font-weight:400; line-height:2.1; font-family: 'Almarai', sans-serif; margin: 0 auto; max-width: 600px;">نحن في كرمل فريق متخصص في تطوير البرمجيات وتصميم الحلول الرقمية الذكية التي تواكب متطلبات السوق وتواجه التحديات بثقة. نضم مطورين، مصممين، ومهندسي برمجيات يعملون بشغف واحد: تحويل الأفكار إلى حلول تقنية فعّالة. نبدأ بتحليل دقيق لاحتياجات العميل، وننفذ بعناية واحتراف، مع التزام كامل في كل مرحلة من مراحل المشروع — من التخطيط إلى الإطلاق وما بعده. نحرص على أن تكون تجربة التعاون معنا سلسة، مهنية، ومبنية على نتائج حقيقية وثقة تدوم.</p>
+            <p style="font-size:1.08rem; color:#666; font-weight:400; line-height:2.1; font-family: 'Tajawal', sans-serif; margin: 0 auto; max-width: 600px;">نحن في كرمل فريق متخصص في تطوير البرمجيات وتصميم الحلول الرقمية الذكية التي تواكب متطلبات السوق وتواجه التحديات بثقة. نضم مطورين، مصممين، ومهندسي برمجيات يعملون بشغف واحد: تحويل الأفكار إلى حلول تقنية فعّالة. نبدأ بتحليل دقيق لاحتياجات العميل، وننفذ بعناية واحتراف، مع التزام كامل في كل مرحلة من مراحل المشروع — من التخطيط إلى الإطلاق وما بعده. نحرص على أن تكون تجربة التعاون معنا سلسة، مهنية، ومبنية على نتائج حقيقية وثقة تدوم.</p>
           </div>
    
         </div>
       </div>
     </section>
 
-                   <section id="partners" class="partners-magical-section">
+                   <section id="partners" class="partners-magical-secimage.pngtion">
             <div class="partners-container">
               <div class="partners-header">
                 <div class="partners-title-wrapper">
@@ -949,32 +962,11 @@
           </div>
         </div>
         
-        <div class="why-karmel-cta">
-          <div class="cta-content">
-            <h3>
-              <span class="ar">جاهز لبدء رحلتك الرقمية؟</span>
-              <span class="en" style="display:none;">Ready to start your digital journey?</span>
-            </h3>
-            <p>
-              <span class="ar">تواصل معنا الآن واحصل على استشارة مجانية لمشروعك</span>
-              <span class="en" style="display:none;">Contact us now and get a free consultation for your project</span>
-            </p>
-            <a href="#contact" class="cta-button">
-              <span class="ar">ابدأ الآن</span>
-              <span class="en" style="display:none;">Start Now</span>
-              <i class="fas fa-arrow-left"></i>
-            </a>
-          </div>
-          <div class="cta-decoration">
-            <div class="floating-shapes">
-              <div class="shape shape-1"></div>
-              <div class="shape shape-2"></div>
-              <div class="shape shape-3"></div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
+
+
 
     <!-- Contact Us Section: Clean, Modern, Consistent -->
     <section id="contact" class="contact-section">
@@ -987,24 +979,38 @@
             لا تتردد في التواصل معنا عبر الوسائل التالية:
           </p>
           <ul class="contact-list">
-            <li><i class="fa fa-phone"></i> <span dir="ltr" style="unicode-bidi: embed;">+972 58-630-0009</span></li>
-            <li><i class="fa fa-envelope"></i> <a href="mailto:support@karmelplus.com" style="color:inherit;text-decoration:underline;cursor:pointer;">support@karmelplus.com</a></li>
-            <li><i class="fa fa-map-marker-alt"></i> شعفاط، القدس</li>
+            <li><i class="fa fa-phone"></i> الهاتف: <span dir="ltr" style="unicode-bidi: embed;">+972 58-630-0009</span></li>
+            <li><i class="fa fa-envelope"></i> البريد الإلكتروني: <a href="mailto:support@karmelplus.com" style="color:inherit;text-decoration:underline;cursor:pointer;">support@karmelplus.com</a></li>
+            <li><i class="fa fa-map-marker-alt"></i> العنوان: شعفاط</li>
           </ul>
+          
+          <!-- معلومات زيارة المكتب -->
+          <div class="office-info" style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%); border-radius: 12px; border: 1px solid #e0e7ff; box-shadow: 0 4px 6px rgba(124, 58, 237, 0.1);">
+            <h3 style="color: #7c3aed; font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Tajawal', sans-serif; text-align: center;">زوروا مكتبنا</h3>
+            <p style="color: #374151; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; font-family: 'Tajawal', sans-serif; text-align: center;">شعفاط</p>
+            <p style="color: #374151; font-size: 1rem; font-weight: 500; font-family: 'Tajawal', sans-serif; text-align: center;">مفتوح من الأحد إلى الخميس، 9:00-17:00</p>
+          </div>
          
           <div class="contact-map">
             <iframe
-              src="https://www.google.com/maps?q=Jerusalem%2C%20Shuafat&output=embed"
+              src="https://www.google.com/maps?q=Shuafat&output=embed"
               width="100%" height="180" style="border:0; border-radius:14px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
         </div>
        
         <form class="contact-form">
-          <input type="text" placeholder="الاسم الكامل" required>
-          <input type="email" placeholder="البريد الإلكتروني" required>
-          <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
-          <button type="submit">إرسال الرسالة</button>
+          <input type="text" placeholder="الاسم الكامل" required autocomplete="name" inputmode="text">
+          <input type="email" placeholder="البريد الإلكتروني" required autocomplete="email" inputmode="email">
+          <input type="tel" placeholder="رقم الهاتف" autocomplete="tel" inputmode="tel">
+          <textarea placeholder="اكتب رسالتك هنا..." required inputmode="text"></textarea>
+          <button type="submit" aria-label="إرسال الرسالة">
+            <span class="button-text">إرسال الرسالة</span>
+            <span class="button-loading" style="display: none;">
+              <i class="fas fa-spinner fa-spin"></i>
+              جاري الإرسال...
+            </span>
+          </button>
         </form>
       </div>
     </section>
@@ -1015,9 +1021,9 @@
     <div class="footer-simple-container">
       <div class="footer-simple-content">
         <div class="footer-simple-info">
-          <h3 class="footer-simple-title">
-            <span class="ar">كرمل+</span>
-          </h3>
+          <div class="footer-logo-container">
+            <img src="images/full_light_logo.png" alt="Karmel Logo" class="footer-logo">
+          </div>
           <div class="footer-simple-icons">
             <a href="https://github.com" class="footer-simple-icon" aria-label="GitHub" target="_blank" rel="noopener">
               <i class="fa-brands fa-github"></i>
@@ -1036,19 +1042,19 @@
         
         <div class="footer-simple-map">
           <iframe 
-            src="https://www.google.com/maps?q=Jerusalem%2C%20Shuafat&output=embed"
+            src="https://www.google.com/maps?q=Shuafat&output=embed"
             width="100%" 
             height="120" 
             style="border:0; border-radius: 8px;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="موقع كرمل+ في شعفاط، القدس">
+            title="موقع كرمل+ في شعفاط">
           </iframe>
-          <p class="footer-simple-address">
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="ar">شعفاط، القدس</span>
-          </p>
+                      <p class="footer-simple-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span class="ar">شعفاط</span>
+            </p>
         </div>
       </div>
       
@@ -1075,7 +1081,7 @@
       </div>
       
       <div class="footer-simple-copyright">
-        <span class="ar">&copy; 2025 شركة كرمل. جميع الحقوق محفوظة.</span>
+        <span class="ar">&copy; 2025 كرمل+. جميع الحقوق محفوظة.</span>
       </div>
     </div>
   </footer>
@@ -1336,13 +1342,13 @@
             <span class="en" style="display:none;">Applicable Law and Dispute Resolution</span>
           </h4>
           <p>
-            <span class="ar">تخضع هذه الشروط لقانون فلسطين ويتم حل النزاعات من خلال:</span>
-            <span class="en" style="display:none;">These terms are subject to Palestinian law and disputes are resolved through:</span>
+            <span class="ar">تخضع هذه الشروط للقوانين المحلية المعمول بها ويتم حل النزاعات من خلال:</span>
+            <span class="en" style="display:none;">These terms are subject to applicable local laws and disputes are resolved through:</span>
           </p>
           <ul>
             <li><span class="ar">المحادثات الودية والتفاوض المباشر</span><span class="en" style="display:none;">Friendly conversations and direct negotiation</span></li>
             <li><span class="ar">الوساطة من قبل طرف محايد</span><span class="en" style="display:none;">Mediation by a neutral party</span></li>
-            <li><span class="ar">المحاكم المختصة في فلسطين</span><span class="en" style="display:none;">Competent courts in Palestine</span></li>
+            <li><span class="ar">المحاكم المختصة المحلية</span><span class="en" style="display:none;">Competent local courts</span></li>
           </ul>
           
           <div class="contact-highlight">
@@ -1357,7 +1363,7 @@
               <span >📞 الهاتف: <em>+972 58-630-0009</em></span>
             </p>
             <p>
-              <span>📍 العنوان: <em>شعفاط، القدس</em></span>
+              <span>📍 العنوان: <em>شعفاط</em></span>
             </p>
           </div>
         </div>
@@ -1366,6 +1372,5 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="Admin-Dashboard/site-updater.js"></script>
   </body>
 </html> 
