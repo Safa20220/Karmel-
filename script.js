@@ -216,18 +216,55 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         const inputs = contactForm.querySelectorAll('input, textarea');
         
-        // Enhanced form validation
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                validateField(this);
-            });
-            
-            input.addEventListener('input', function() {
-                if (this.classList.contains('error')) {
-                    validateField(this);
-                }
-            });
+            // Enhanced form validation
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+            checkFormCompletion();
         });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                validateField(this);
+            }
+            checkFormCompletion();
+        });
+    });
+    
+    // Check if all required fields are filled
+    function checkFormCompletion() {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const requiredInputs = contactForm.querySelectorAll('input[required], textarea[required]');
+        const optionalInputs = contactForm.querySelectorAll('input:not([required]), textarea:not([required])');
+        
+        let allRequiredFilled = true;
+        let allOptionalFilled = true;
+        
+        // Check required fields
+        requiredInputs.forEach(input => {
+            if (!input.value.trim()) {
+                allRequiredFilled = false;
+            }
+        });
+        
+        // Check optional fields (if any have content, all should be valid)
+        optionalInputs.forEach(input => {
+            if (input.value.trim()) {
+                if (!validateField(input)) {
+                    allOptionalFilled = false;
+                }
+            }
+        });
+        
+        // Change button color based on completion
+        if (allRequiredFilled && allOptionalFilled) {
+            submitBtn.style.background = '#7c3aed';
+            submitBtn.style.boxShadow = '0 4px 15px rgba(124, 58, 237, 0.3)';
+        } else {
+            submitBtn.style.background = '#6b7280';
+            submitBtn.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+        }
+    }
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -239,19 +276,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            if (isValid) {
-                // Show loading state
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'جاري الإرسال...';
-                submitBtn.disabled = true;
+                    if (isValid) {
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const buttonText = submitBtn.querySelector('.button-text');
+            const buttonLoading = submitBtn.querySelector('.button-loading');
+            const originalBackground = submitBtn.style.background;
+            
+            // Hide normal text and show loading text
+            buttonText.style.display = 'none';
+            buttonLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
                 
                 // Simulate form submission (replace with actual API call)
                 setTimeout(() => {
-                    showNotification('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.', 'success');
+                    showSuccessModal();
                     contactForm.reset();
-                    submitBtn.textContent = originalText;
+                    
+                    // Restore button state
+                    buttonText.style.display = 'inline';
+                    buttonLoading.style.display = 'none';
                     submitBtn.disabled = false;
+                    submitBtn.style.background = '#6b7280';
+                    submitBtn.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
                 }, 2000);
             }
         });
@@ -454,6 +501,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     
+    // ===== Success Modal Functionality =====
+    const successModal = document.getElementById('successModal');
+    const successClose = document.querySelector('.success-close');
+    const successCloseBtn = document.querySelector('.success-close-btn');
+    
+    // Show success modal
+    function showSuccessModal() {
+        successModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close success modal
+    function closeSuccessModal() {
+        successModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Success modal event listeners
+    if (successClose) {
+        successClose.addEventListener('click', closeSuccessModal);
+    }
+    
+    if (successCloseBtn) {
+        successCloseBtn.addEventListener('click', closeSuccessModal);
+    }
+    
+    // Close success modal when clicking outside
+    if (successModal) {
+        successModal.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                closeSuccessModal();
+            }
+        });
+    }
+    
+    // Close success modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && successModal.style.display === 'flex') {
+            closeSuccessModal();
+        }
+    });
+    
     // ===== Privacy Policy and Terms Modal Functionality =====
     const privacyPolicyLink = document.getElementById('privacyPolicyLink');
     const termsLink = document.getElementById('termsLink');
@@ -536,7 +625,13 @@ document.addEventListener('DOMContentLoaded', function() {
         handleHeaderScroll();
         toggleScrollToTop();
         
-
+        // Initialize form completion check
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            setTimeout(() => {
+                checkFormCompletion();
+            }, 100);
+        }
     }
     
     init();
