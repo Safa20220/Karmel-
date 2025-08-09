@@ -5106,3 +5106,43 @@ main {
     page-break-after: avoid;
   }
 }
+
+/* ===== Hero Section explicit placement (RTL): text right, image left ===== */
+@media (min-width: 769px) {
+  #home .hero-simple-col-left { grid-column: 1; }
+  #home .hero-simple-col-right { grid-column: 2; }
+}
+
+/* ===== Featured Partner Badge ===== */
+.partner-card.featured {
+  border-color: #f59e0b;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.12);
+}
+.partner-card.featured:hover {
+  box-shadow: 0 20px 45px rgba(245, 158, 11, 0.2);
+}
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: #1f2937;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.25);
+  z-index: 3;
+}
+
+/* ===== Larger partner logos ===== */
+.partners-magical-grid .partner-logo-container { width: 200px; height: 200px; }
+.partners-magical-grid .partner-logo { width: 150px; height: 150px; }
+@media (min-width: 1024px) {
+  .partners-magical-grid .partner-logo-container { width: 220px; height: 220px; }
+  .partners-magical-grid .partner-logo { width: 170px; height: 170px; }
+}
+@media (max-width: 768px) {
+  .partners-magical-grid .partner-logo-container { width: 160px; height: 160px; }
+  .partners-magical-grid .partner-logo { width: 120px; height: 120px; }
+}
